@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.form-control {
+    max-width: 600px; /* Reduced width */
+    border-radius: 20px; /* Rounded corners */
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+
+  .btnSubmit{
+      max-width: 300px; /* Reduced width */
+    border-radius: 20px; /* Rounded corners */
+    font-size: 0.9rem; /* Slightly smaller text */
+
+  }
+  .form-label {
+    font-size: 0.85rem; /* Smaller label text */
+  }
+  .image-container img {
+    max-width: 400px; /* Ensure image is responsive */
+    height:600px;
+    border-radius: 15px; /* Optional rounded corners for the image */
+  }
+  .image-container {
+    padding: 20px; /* Add some spacing around the image */
+  }
+
+
+  .columnBG{
+    background-color:whitesmoke;
+  }
+  
+  
+  
+  

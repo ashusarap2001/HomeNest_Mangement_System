@@ -1,0 +1,15 @@
+@charset "UTF-8";
+    /* Custom styles for card and hover effects */
+    .card-custom {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card-custom:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-custom {
+        height: 200px;
+        object-fit: cover;
+    }

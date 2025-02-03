@@ -1,0 +1,28 @@
+   .container1 {
+            background-image: url('/IMG/B1.jpg');  /* Replace with your background image path */
+            background-size: cover;  /* Ensure the background covers the entire container */
+            background-position: center;  /* Center the background image */
+            background-attachment: fixed;  /* Make the background image fixed while scrolling */
+            padding: 50px 0;  /* Add padding to the container */
+        }
+
+    
+        .quote-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: white;  /* Make the text white for visibility against the background */
+        }
+
+        .author-name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-weight: bold;
+            font-size: 1rem;
+            color: white;  /* Make the author's name white */
+        }

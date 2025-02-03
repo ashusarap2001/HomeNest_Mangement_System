@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Setting - Hostel Management</title>
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" href="/CSS/adminSetting.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+	integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body>
+	<!-- Sidebar -->
+	<div class="sidebar position-fixed p-3">
+		<h3>"HomeNest"</h3>
+		<ul class="nav flex-column">
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/adminDashboard}"> <i
+					class="fas fa-tachometer-alt"></i> Dashboard
+			</a></li>
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/adminStudManagement}"> <i class="fas fa-users"></i>
+					Student Management
+			</a></li>
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/adminRoomManagement}"> <i class="fas fa-bed"></i>
+					Room Management
+			</a></li>
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/adminFeeManagement}"> <i
+					class="fas fa-credit-card"></i> Fees Management
+			</a></li>
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/adminReportManagement}"> <i
+					class="fas fa-chart-line"></i> Hostel Reports
+			</a></li>
+			<li class="nav-item"><a class="nav-link active"
+				th:href="@{/admin/AdminSettingPage}"> <i class="fas fa-cogs"></i>
+					Settings
+			</a></li>
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/lateNightApproval}"> <i class="fas fa-cogs"></i>
+					Leave-Night Out Approval
+			</a></li>
+		</ul>
+	</div>
+	<!-- Main Content -->
+	<div class="content fadeIn">
+		<!-- Header Section -->
+		<div class="container mb-4">
+			<h1>Settings</h1>
+			<p class="lead">Manage system configurations, profile settings,
+				and password changes.</p>
+		</div>
+
+
+
+
+
+
+<div class="container mb-4">
+    <div class="card">
+        <div class="card-header">
+            <h5>Update User Profile</h5>
+        </div>
+        <div class="card-body">
+            <form th:action="@{/admin/update/adminProfil}" method="post" th:object="${data}">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>ID</th>
+                            <td>
+                                <input type="hidden" class="form-control" name="id" th:value="${data.id}" readonly>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td>
+                                <input type="text" class="form-control" name="name" th:value="${data.name}" placeholder="Enter Name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Age</th>
+                            <td>
+                                <input type="number" class="form-control" name="age" th:value="${data.age}" placeholder="Enter Age">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Date of Birth</th>
+                            <td>
+                                <input type="date" class="form-control" name="dob" th:value="${data.dob}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td>
+                                <textarea class="form-control" name="address" rows="3" placeholder="Enter Address" th:text="${data.address}"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Contact</th>
+                            <td>
+                                <input type="tel" class="form-control" name="number" th:value="${data.number}" placeholder="Enter Contact Number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>
+                                <input type="email" class="form-control" name="email" th:value="${data.email}" placeholder="Enter Email">
+                            </td>
+                        </tr>
+                        
+                         <tr>
+                            <th>Password</th>
+                            <td>
+                                <input type="Password" class="form-control" name="pass" placeholder="Enter Pass">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Centered Submit and Cancel Buttons -->
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-success">Update Profile</button>
+                    <a th:href="@{/admin}" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+			<!-- Change Password Section -->
+		<div class="container mb-4">
+			<div class="card">
+				<div class="card-header">
+					<h5>Change Password</h5>
+				</div>
+				<div class="card-body">
+					<form>
+						<div class="mb-3">
+							<label for="currentPassword" class="form-label">Current
+								Password</label> <input type="password" class="form-control"
+								id="currentPassword" required>
+						</div>
+						<div class="mb-3">
+							<label for="newPassword" class="form-label">New Password</label>
+							<input type="password" class="form-control" id="newPassword"
+								required>
+						</div>
+						<div class="mb-3">
+							<label for="confirmPassword" class="form-label">Confirm
+								New Password</label> <input type="password" class="form-control"
+								id="confirmPassword" required>
+						</div>
+						<button type="submit" class="btn custom-btn">Change
+							Password</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap JS and Popper.js -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

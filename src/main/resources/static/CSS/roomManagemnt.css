@@ -1,0 +1,167 @@
+    body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+
+        /* Sidebar Style */
+        .sidebar {
+            background-color: #34495e;
+            color: white;
+            height: 100vh;
+            padding: 30px 15px;
+            position: fixed;
+            width: 250px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px 0 0 8px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        /* Sidebar Table-like Design */
+        .sidebar h3 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .nav {
+            display: table;
+            width: 100%;
+        }
+
+        .sidebar .nav-item {
+            display: table-row;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .sidebar .nav-item:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar .nav-link {
+            display: table-cell;
+            padding: 12px;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background-color: #1abc9c;
+            border-radius: 5px;
+        }
+
+        .sidebar .nav-link i {
+            margin-right: 10px;
+        }
+
+        /* Sidebar Animation */
+        .sidebar {
+            animation: slideInLeft 0.5s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-250px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Content Area */
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+
+        /* Hover Effect on Sidebar Items */
+        .sidebar .nav-link:hover {
+            color: #fff;
+            background-color: #2ecc71;
+        }
+      
+
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Table Styles */
+        table th, table td {
+            text-align: center;
+        }
+
+        .available {
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .occupied {
+            background-color: #dc3545;
+            color: white;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fadeIn {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .sidebar {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .table tr {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .table tr:nth-child(even) {
+            animation-delay: 0.5s;
+        }
+
+        .table tr:nth-child(odd) {
+            animation-delay: 1s;
+        }

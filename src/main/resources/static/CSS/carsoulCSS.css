@@ -1,0 +1,13 @@
+@charset "UTF-8";
+  .carousel-inner img {
+    height: 500px; /* Increased height for the images */
+  /*   object-fit: cover;  *//* Ensures the image fits without distortion */
+  }
+
+  .carousel-item {
+    max-height: 5000px; /* Ensure the entire item adheres to the increased height */
+  }
+
+  .carousel-caption {
+    bottom: 40px; /* Adjust caption position as needed */
+  }

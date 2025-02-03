@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace=" ~{base::Layout(~{::section})}">
+
+<head>
+<title>Hostel</title>
+</head>
+
+<body>
+
+	<section>
+
+	<input type="hidden" id="status" th:value="${status}" />
+
+		<div class="contanier">
+
+			<!-- Carousel Section with CSS Animation -->
+			<div id="carouselExampleCaptions" class="carousel slide"
+				data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleCaptions"
+						data-bs-slide-to="0" class="active" aria-current="true"
+						aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleCaptions"
+						data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleCaptions"
+						data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active fade-in">
+						<img src="/IMG/C3.jpg" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>First slide label</h5>
+							<p>Some representative placeholder content for the first
+								slide.</p>
+						</div>
+					</div>
+					<div class="carousel-item fade-in">
+						<img src="/IMG/C1.jpg" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Second slide label</h5>
+							<p>Some representative placeholder content for the second
+								slide.</p>
+						</div>
+					</div>
+					<div class="carousel-item fade-in">
+						<img src="/IMG/C2.jpg" class="d-block w-100" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Third slide label</h5>
+							<p>Some representative placeholder content for the third
+								slide.</p>
+						</div>
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button"
+					data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button"
+					data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+		<!-- Content Section with Enhanced Design and Animations -->
+		<div class="container py-5">
+			<div class="row align-items-center">
+				<!-- Left Column with Text -->
+				<div class="col-lg-7 col-md-12 animate-left">
+					<h2 class="display-4 text-center text-md-start py-3">
+						Our Hostel Has Been<br> Providing Comfort for Over 20 Years
+					</h2>
+					<h4 class="py-3 text-center text-md-start">We strive to offer
+						the best for all our customers</h4>
+					<p class="lead py-3 text-center text-md-start">Our hostel has
+						been providing a safe, comfortable, and affordable living space
+						for students and travelers for over two decades. Located in the
+						heart of the city, we offer modern amenities, clean rooms, and a
+						community-driven environment where you can meet new people, study,
+						and relax. Whether you're staying for a short visit or long-term,
+						we ensure a cozy, home-like experience. With a variety of room
+						types, 24/7 security, high-speed internet, and dedicated staff, we
+						aim to make your stay as pleasant as possible. Come and experience
+						the best in hostel living!</p>
+				</div>
+
+				<!-- Right Column with Card -->
+				<div class="col-lg-5 col-md-12 animate-right">
+					<div class="card shadow-lg rounded-3 overflow-hidden"
+						style="width: 100%;">
+						<img src="/IMG/A1.jpg" class="card-img-top" alt="Hostel Image">
+						<div class="card-body text-center">
+							<h5 class="card-title">Ready for Your Stay?</h5>
+							<p class="card-text">Check availability and book your stay
+								now for a memorable experience.</p>
+							<a href="#" class="btn btn-primary btn-lg">Check Availability</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Hostel Facilities Section -->
+		<div class="container-fluid py-4">
+			<h1
+				class="d-flex justify-content-center align-items-center animate-zoom">Hostel
+				Facilities</h1>
+		</div>
+
+		<div class="container-fluid py-4">
+			<div class="row">
+				<div class="col-3 animate-up">
+					<div class="card card-custom" style="width: 18rem;">
+						<img src="/IMG/W1.jpg" class="card-img-top card-img-custom"
+							alt="Wi-Fi">
+						<div class="card-body">
+							<h3 class="card-text">Free Wi-Fi</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 animate-up">
+					<div class="card card-custom" style="width: 18rem;">
+						<img src="/IMG/S1.jpg" class="card-img-top card-img-custom"
+							alt="24/7 Security">
+						<div class="card-body">
+							<h3 class="card-text">24/7 Security</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 animate-up">
+					<div class="card card-custom" style="width: 18rem;">
+						<img src="/IMG/K1.jpg" class="card-img-top card-img-custom"
+							alt="Shared Kitchen">
+						<div class="card-body">
+							<h3 class="card-text">Shared Kitchen</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 animate-up">
+					<div class="card card-custom" style="width: 18rem;">
+						<img src="/IMG/G2.jpg" class="card-img-top card-img-custom"
+							alt="Study Area">
+						<div class="card-body">
+							<h3 class="card-text">Study Area</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Testimonials Section -->
+		<div class="container-fluid py-4">
+			<h1
+				class="d-flex justify-content-center align-items-center animate-zoom">What
+				Our Guests Say</h1>
+		</div>
+
+		<div class="container py-5">
+			<div class="row">
+				<div class="col-4 animate-left">
+					<div class="card">
+						<div class="card-body">
+							<blockquote class="blockquote">
+								<p>"The best hostel I've ever stayed at! Friendly staff and
+									amazing amenities."</p>
+								<footer class="blockquote-footer">Rakesh Sharam</footer>
+							</blockquote>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 animate-left">
+					<div class="card">
+						<div class="card-body">
+							<blockquote class="blockquote">
+								<p>"Comfortable and affordable rooms with all the necessary
+									facilities."</p>
+								<footer class="blockquote-footer">Parth Rathi</footer>
+							</blockquote>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 animate-left">
+					<div class="card">
+						<div class="card-body">
+							<blockquote class="blockquote">
+								<p>"Great location and excellent customer service. Highly
+									recommend!"</p>
+								<footer class="blockquote-footer">Vansh Kohli</footer>
+							</blockquote>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container1 container">
+			<div class="row">
+
+				<!-- Second Column: Quote -->
+				<div class="col-12 ">
+					<div class="quote-text">
+						"Hostel living is more than just accommodation; it's an
+						experience, a journey, and a place where memories are made."<br>
+					</div>
+				</div>
+
+				<!-- Third Column: Author Name -->
+				<div class="col-12">
+					<div class="author-name">- John Doe</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Pricing Section -->
+		<div class="container-fluid py-4">
+			<h1
+				class="d-flex justify-content-center align-items-center animate-zoom">Our
+				Pricing</h1>
+		</div>
+
+		<div class="container py-5">
+			<div class="row">
+				<div class="col-4 animate-up">
+					<div class="card">
+						<div class="card-body">
+							<h3 class="card-title">Standard Room</h3>
+							<p class="card-text">Affordable room with shared facilities.</p>
+							<h4>₹59,999.00/6Months</h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 animate-up">
+					<div class="card">
+						<div class="card-body">
+							<h3 class="card-title">Premium Room</h3>
+							<p class="card-text">Luxurious room with private bathroom and
+								AC.</p>
+							<h4>₹79,999.00/6Months</h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 animate-up">
+					<div class="card">
+						<div class="card-body">
+							<h3 class="card-title">VIP Suite</h3>
+							<p class="card-text">Exclusive suite with all amenities
+								included.</p>
+							<h4>₹99,999.00/6Months</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Contact Us Section -->
+		<div class="container py-5">
+			<h2
+				class="d-flex justify-content-center align-items-center animate-zoom">Contact
+				Us</h2>
+			<div class="row">
+				<div class="col-12">
+					<form th:action="@{/saveConact}" method="post">
+						<div class="mb-3">
+							<label for="name" class="form-label">Full Name</label> <input
+								type="text" class="form-control" name="name"
+								placeholder="Enter your full name">
+						</div>
+						<div class="mb-3">
+							<label for="email" class="form-label">Email Address</label> <input
+								type="email" class="form-control" name="email"
+								placeholder="Enter your email">
+						</div>
+						<div class="mb-3">
+							<label for="message" class="form-label">Message</label>
+							<textarea class="form-control" name="message" rows="3"
+								placeholder="Enter your message"></textarea>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+    var status = document.getElementById("status").value;
+    
+    if(status) {  // Check if status is not empty
+        if (status === "Message Send SuccessFully...") {
+            swal("Congrats", "Contact message sent", "success");
+        } else if (status === "Message Send UNSuccessFully...") {
+            swal("Oops", "There was an issue sending your message", "error");
+        }
+    }
+</script>
+	</section>
+	
+
+	
+</body>
+</html>

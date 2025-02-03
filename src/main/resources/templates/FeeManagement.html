@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FEE Management - Hostel Management</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+	integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" href="/CSS/feeManagemnt.css">
+<body>
+	<input type="hidden" id="status" th:value="${status}" />
+	<!-- Sidebar -->
+	<div class="sidebar position-fixed p-3">
+		<h3>"HomeNest"</h3>
+		<ul class="nav flex-column">
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/adminDashboard}"> <i
+					class="fas fa-tachometer-alt"></i> Dashboard
+			</a></li>
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/adminStudManagement}"> <i class="fas fa-users"></i>
+					Student Management
+			</a></li>
+				<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/roomAllot}"> <i
+					class="fas fa-credit-card"></i> Room Allotment
+			</a></li>
+			<li class="nav-item"><a class="nav-link active"
+				th:href="@{/admin/adminFeeManagement}"> <i
+					class="fas fa-credit-card"></i> Fees Management
+			</a></li>
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/adminReportManagement}"> <i
+					class="fas fa-chart-line"></i> Hostel Reports
+			</a></li>
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/AdminSettingPage}"> <i class="fas fa-cogs"></i>
+					Settings
+			</a></li>
+			<li class="nav-item"><a class="nav-link"
+				th:href="@{/admin/lateNightApproval}"> <i class="fas fa-cogs"></i>
+					Leave-Night Out Approval
+			</a></li>
+		</ul>
+	</div>
+
+	<!-- Main Content -->
+	<div class="content fadeIn">
+		<!-- Header Section -->
+		<div class="container mb-4">
+			<h1>Fees Management</h1>
+			<p class="lead">Manage Hostel Fees, Payments, and Pending Fees</p>
+		</div>
+
+		<!-- Fee Summary Section -->
+		<div class="container mb-4">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">
+							<h5>Total Fees Collected</h5>
+						</div>
+						<div class="card-body">
+						<h3>₹<span th:text="${RecivedAmount}"></span> </h3>
+						
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">
+							<h5>Pending Fees</h5>
+						</div>
+						<div class="card-body">
+								<h3>₹<span th:text="${RemaningAmount}"></span> </h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Fee Payment Records Table -->
+		<div class="container mb-4">
+			<div class="card">
+				<div class="card-header">
+					<h5>Fee Payment Records</h5>
+				</div>
+				<div class="card-body">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>SrNo</th>
+								<th>Candidate Name</th>
+								<th>Amount</th>
+								<th>Paid Amount </th>
+								<th>Remaining Amount</th>
+								<th>Status</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="data : ${payment}">
+								<td th:text="${data.id}"></td>
+								<td th:text="${data.candidate_name}"></td>
+								<td th:text="${data.amound}"></td>
+								<td th:text="${data.paying_amount}"></td>
+								<td th:text="${data.remaning_amount}"></td>
+								<td th:text="${data.date}"></td>
+								<td th:text="${data.status}"></td>
+								<td>
+								<a th:href="@{/admin/edit/PaymentById/{id}(id=${data.id})}">
+								<button class="btn btn-warning btn-sm">Edit</button>
+								</a>
+									
+								<a th:href="@{/admin/delete/PaymentById/{id}(id=${data.id})}">
+								<button class="btn btn-danger btn-sm">Delete</button>
+								</a>
+								
+								
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- Add Fee Payment Section -->
+		<div class="container">
+			<div class="card">
+				<div class="card-header">
+					<h5>Add Fee Payment</h5>
+				</div>
+				<div class="card-body">
+					<form th:action="@{/admin/savePayment}" method="post">
+						<div class="mb-3">
+							<label for="studentName" class="form-label">Candidate
+								Name</label> <input type="text" class="form-control"
+								name="candidate_name" id="studentName"
+								placeholder="Enter Student Name">
+						</div>
+						
+						<div class="mb-3">
+							<label for="studentName" class="form-label">Unique Id</label> <input type="text" class="form-control"
+								name="uniqueid" id="uniqueid"
+								placeholder="Unique Id">
+						</div>
+						
+						
+						<div class="mb-3">
+							<label for="paymentAmount" class="form-label">Amount</label> <input
+								type="number" class="form-control" name="amound"
+								id="paymentAmount" placeholder="Enter Amount">
+						</div>
+						
+						<div class="mb-3">
+							<label for="paymentAmount" class="form-label">Paying Amount</label> <input
+								type="number" class="form-control" name="paying_amount"
+								id="paying_amount" placeholder="Enter Amount">
+						</div>
+						
+						<div class="mb-3">
+							<label for="paymentDate" class="form-label">Payment Date</label>
+							<input type="date" class="form-control" name="date"
+								id="paymentDate">
+						</div>
+						<div class="mb-3">
+							<label for="paymentStatus" class="form-label">Payment
+								Status</label> <select class="form-select" id="paymentStatus"
+								name="status">
+								<option value="paid">Paid</option>
+								<option value="pending">Pending</option>
+							</select>
+						</div>
+						<button type="submit" class="btn custom-btn">Add Payment</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+    var status = document.getElementById("status").value;
+    
+    if(status) {  // Check if status is not empty
+        if (status === "Fee") {
+            swal("Congrats", "Payment Succesfully....", "success");
+        } else if (status === "NotFee") {
+            swal("Oops", "There was an issue....", "error");
+        }
+    }
+</script>
+
+</body>
+</html>
